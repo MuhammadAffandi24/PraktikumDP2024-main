@@ -110,16 +110,18 @@ enum RuanganUjian {
 };
 
 int main() {
-    enum RuanganUjian ruang_ujian = eRuangAulaKecil;
+    enum RuanganUjian ruang_ujian = eRuangKelas12_A;
 
-    if (ruang_ujian == eRuangAulaKecil) {
-        printf("Menggunakan Ruang Aula Kecil\n");
+    if (ruang_ujian == 0) {
+        printf("Menggunakan Ruang kelas 12 A\n");
+    } else {
+        printf("niatmu ki pake yang mana kau ga paham");
     }
 }
 
 /*
 Output:
-Menggunakan Ruang Aula Kecil
+Menggunakan Ruang kelas 12 A
 */
 ```
 
