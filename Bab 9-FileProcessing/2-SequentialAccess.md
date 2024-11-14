@@ -12,42 +12,42 @@ Namun dalam kali ini kita akan membahas yang `fscanf` saja. Pada dasarnya, `fsca
 
 Isi file **biodata.txt** sebelumnya:
 ```
-Michael_Raditya
-Informatika
-2020
+Farhan_Wegig_ALIAS_TIOBIGBOAY
+Sains_Data
+2023
 ```
 
 ```c
-FILE *f;
+#include <stdio.h>
 
-printf("Memuat dari biodata.txt ...");
-f = fopen("biodata.txt", "r");
-if (f != NULL) {
-    char nama[100];
-    char prodi[50];
-    int angkatan;
+int main() {
+    FILE *f;
 
-    fscanf(f, "%s", nama);
-    fscanf(f, "%s", prodi);
-    fscanf(f, "%d", &angkatan);
+    printf("Memuat dari apalah.txt ...");
+    f = fopen("apalah.txt", "r");
+    if (f != NULL) {
+        char nama[100];
+        char prodi[50];
+        int angkatan;
 
-    printf("Nama : %s\n", nama);
-    printf("Prodi : %s\n", prodi);
-    printf("Angkatan : %d\n", angkatan);
+        // Membaca data dari file
+        fscanf(f, "%s", nama);       // Membaca nama
+        fscanf(f, "%s", prodi);      // Membaca program studi
+        fscanf(f, "%d", &angkatan);  // Membaca angkatan
 
-    fclose(f);
-} else {
-    printf("Tidak dapat membaca file biodata.txt"\n);
+        // Menampilkan data yang dibaca
+        printf("\nNama : %s\n", nama);
+        printf("Prodi : %s\n", prodi);
+        printf("Angkatan : %d\n", angkatan);
+
+        fclose(f);  // Menutup file setelah selesai
+    } else {
+        // Menampilkan pesan jika file tidak dapat dibuka
+        printf("\nTidak dapat membaca file biodata.txt\n");
+    }
+
+    return 0;
 }
-
-/*
-Output:
-
-Memuat dari biodata.txt ...
-Nama : Michael_Raditya
-Prodi : Informatika
-Angkatan : 2020
-*/
 ```
 
 ## Operasi Penulisan (Write)
@@ -55,6 +55,9 @@ Angkatan : 2020
 Dalam menulis file berjenis plaintext, dapat menggunakan beberapa fungsi pada header **stdio.h** seperti: `fprintf`, `fputc`, dan `fputs`. Cara penggunaan tiap-tiap fungsi tersebut dapat diliht [di sini](https://cplusplus.com/reference/cstdio/)
 
 ```c
+#include <stdio.h>
+
+int main() {
 FILE *f;
 char nama[100];
 char prodi[50];
@@ -80,13 +83,13 @@ if (f != NULL) {
 } else {
     printf("Tidak dapat menulis ke file biodata.txt");
 }
-
+}
 /*
 Output:
 
-Masukkan nama : Annys
-Masukkan prodi : Informatika
-Masukkan angkatan : 2022
+Masukkan nama : Windah
+Masukkan prodi : Sadat
+Masukkan angkatan : 2023
 Menyimpan ke biodata.txt ...
 Sukses!
 */
@@ -94,9 +97,9 @@ Sukses!
 
 Isi file **biodata.txt** setelahnya:
 ```
-Annys
-Informatika
-2022
+Windah
+Sadat
+2023
 ```
 
 ## Rewind
