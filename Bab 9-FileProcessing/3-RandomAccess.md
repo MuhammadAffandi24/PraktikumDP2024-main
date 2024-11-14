@@ -44,9 +44,9 @@ if (f != NULL) {
 /*
 Output:
 
-Masukkan nama : Michael_Raditya
-Masukkan prodi : Informatika
-Masukkan angkatan : 2020
+Masukkan nama : Ahuhuy
+Masukkan prodi : Sadataja
+Masukkan angkatan : 2023
 Menyimpan ke biodata.bin ...
 Sukses!
 */
